@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Play and Enjoy</title>
+          <style>
+                    body {
+                              background-color: rgb(13, 9, 126);
+                    }
+
+                    p {
+                              font-size: 60px;
+                              font-style: italic;
+                              color: rgb(240, 252, 17);
+                    }
+
+                    .container {
+                              display: flex;
+                              flex-direction: column;
+                              align-items: center;
+
+
+
+                    }
+
+                    .btn {    border-radius: 5px;
+                              border: 2px solid yellowgreen;
+                              cursor: pointer;
+                              height: 60px;
+                              width: 60px;
+                              margin: 20px;
+                    }
+
+                    #a1 {
+                              font-size: 20px;
+                              background-color: aqua;
+
+                    }
+                    #a2{
+                              font-size: 20px;
+                              background-color: rgb(204, 34, 147);  
+                    }
+                    #a3{
+                              font-size: 20px;
+                              background-color: rgb(211, 54, 22);  
+                    }
+                    #a4{
+                              font-size: 20px;
+                              background-color: rgb(39, 150, 5);  
+                    }
+          </style>
+</head>
+
+<body>
+          <div class="container">
+                    <p>Drum Kit</p>
+                    <div class="con">
+                              <button class="btn" id="a1">1</button>
+                              <button class="btn" id="a2">2</button>
+                              <button class="btn" id="a3">3</button>
+                              <button class="btn" id="a4">4</button>
+                    </div>
+          </div>
+</body>
+<script>
+          for (var i = 0; i < document.querySelectorAll("button").length; i++) {
+                    document.querySelectorAll("button")[i].addEventListener("click", handleclick);
+
+          }
+          function handleclick() {
+                  var v=this.innerHTML;
+                  makesound(v);
+             
+
+                  
+          }
+          document.addEventListener("keypress",function(event){
+                   makesound(event.key);
+          })
+          function makesound(key){
+                    switch(key)
+             {
+                       case "1":
+                       var audio = new Audio('music/1.mp3');
+                   audio.play();
+                   break;
+                   case "2":
+                   var audio = new Audio('music/2.mp3');
+                   audio.play();
+                   break;
+                   case "3":
+                   var audio = new Audio('music/3.mp3');
+                   audio.play();
+                   break;
+                   case "4":
+                   var audio = new Audio('music/4.mp3');
+                   audio.play();
+                   break;  
+                   default: console.log(v);                 
+
+             }
+          }
+</script>
+
+</html>
